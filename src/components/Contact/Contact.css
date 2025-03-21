@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-container {
+    background-color: #111;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contact-left {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+
+.contact-inputs, 
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.contact-inputs::placeholder, 
+textarea::placeholder {
+    color: #ddd;
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d61616;
+    border-radius: 40px;
+    padding: 8px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: 1px solid white;
+    width: fit-content;
+}
+
+.btn:hover {
+    background-color: #ff4040;
+    transform: scale(1.05);
+}
+
+button {
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+img {
+    width: 25px;
+    margin-left: 5px;
+}
+
+
+@media (max-width: 600px) {
+    .contact-left {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .contact-inputs, textarea {
+        font-size: 14px;
+    }
+}
+.footer {
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 16px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer a {
+    margin: 10px 5px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer a:hover {
+    transform: scale(1.2);
+}
+
+.footer img {
+    width: 20px;
+    height:20px;
+    transition: opacity 0.3s ease;
+}
+
+.footer img:hover {
+    opacity: 0.7;
+}
+
+
+@media (max-width: 600px) {
+    .contact-left {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .contact-inputs, textarea {
+        font-size: 14px;
+    }
+}
+
