@@ -33,20 +33,31 @@ const Contact = () => {
         <input type="email" name="email" placeholder='YourEmail' className='contact-inputs' required />
         <textarea name="message" placeholder='Your Message' rows='10' className='contact-input' required></textarea>
         <div className='btn'>
-          <button type="submit">Submit</button> <img src="/assets/submit.png" alt="" />
+          <button type="submit">Submit</button> <img src={`${process.env.PUBLIC_URL}/assets/submit.png`} alt="Submit Button" />
         </div>
 
       </form>
     </div>
-    <h2>Contact</h2>
     <footer class="footer">
       <div>© 2025 Srivandhi. All Rights Reserved. </div>
       <div>
-        <a href="https://www.linkedin.com/in/srivandhi-s-9bb22731b"><img className='linkedin' src="/assets/linkedin.png" alt="linkedin" /></a>
-        <a href="https://leetcode.com/u/srivandhi264/"><img src="/assets/leetcode.png" alt="leetcode" /></a>
-        <a href="https://github.com/Srivandhi"><img src="/assets/github.jpg"  style={{borderRadius:'2px',width:'30px',height:'20px'}} alt="github" /></a>
-        <a href="https://www.geeksforgeeks.org/user/srivandz9qr/"><img  className='gfg' src="/assets/gfg.jpg" alt="gfg" /></a>
-      </div>
+    <a href="https://www.linkedin.com/in/srivandhi-s-9bb22731b" target="_blank" rel="noopener noreferrer">
+        <img className='linkedin' src={`${process.env.PUBLIC_URL}/assets/linkedin.png`} alt="LinkedIn" />
+    </a>
+    
+    <a href="https://leetcode.com/u/srivandhi264/" target="_blank" rel="noopener noreferrer">
+        <img src={`${process.env.PUBLIC_URL}/assets/leetcode.png`} alt="LeetCode" />
+    </a>
+    
+    <a href="https://github.com/Srivandhi" target="_blank" rel="noopener noreferrer">
+        <img src={`${process.env.PUBLIC_URL}/assets/github.png`} style={{ borderRadius: '2px', width: '30px', height: '20px' }} alt="GitHub" />
+    </a>
+    
+    <a href="https://www.geeksforgeeks.org/user/srivandz9qr/" target="_blank" rel="noopener noreferrer">
+        <img className='gfg' src={`${process.env.PUBLIC_URL}/assets/gfg.jpg`} alt="GeeksforGeeks" />
+    </a>
+</div>
+
     </footer>
 
   </>

@@ -1,12 +1,96 @@
-.Home{
-    margin:0;
-    padding:0;
-    background-image:url('/public/assets/backgroundImage.webp');
+
+
+.home {
+    background-image: url('/public/assets/backgroundImage.webp');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    min-width: 100vw;
-   height:100vh;
-   overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    width: 90%;
+    height: 100vh;
+}
+
+.left-container {
+    max-width: 50%;
+}
+
+.left-container h1 {
+    font-size: 3.5vw;
+    color: white;
+    line-height: 1.2;
+}
+
+.left-container h2 {
+    font-size: 1.8vw;
+    color: white;
+    margin-top: 10px;
+}
+
+span {
+    color: rgb(214, 22, 22);
+}
+
+.right-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+}
+
+.right-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-container, .right-container {
+        max-width: 100%;
+    }
+
+    .left-container h1 {
+        font-size: 6vw;
+    }
+
+    .left-container h2 {
+        font-size: 3vw;
+    }
+
+    .right-container img {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 600px) {
+    .left-container h1 {
+        font-size: 7vw;
+    }
+
+    .left-container h2 {
+        font-size: 4vw;
+    }
+
+    .right-container img {
+        max-width: 200px;
+    }
 }

@@ -12,7 +12,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+*{
+  font-family: "Playfair Display", serif;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -40,5 +42,6 @@ section{
   display: block !important;
   visibility:visible !important;
   height: auto !important;
-  overflow: hidden;
+  overflow: hidden  !important;
+
 }
