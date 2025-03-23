@@ -14,7 +14,7 @@ import './Navbar.css';
     return <>
         <nav className='navbar'>
             <ul>
-                <li className='hideOnMobile'><a href="#" onClick={(e)=>{e.preventDefault(); onNavClick("home");}}>Sri</a></li>
+                <li ><a href="#" onClick={(e)=>{e.preventDefault(); onNavClick("home");}}>Sri</a></li>
                 <li className='hideOnMobile hov'><a href="#" onClick={(e)=>{e.preventDefault(); onNavClick("home");}}>Home</a></li>
                 <li className='hideOnMobile hov'><a href="#" onClick={(e)=>{e.preventDefault(); onNavClick("aboutme");}}>AboutMe</a></li>
                 <li className='hideOnMobile hov'><a href="#" onClick={(e)=>{e.preventDefault(); onNavClick("skills");}}>Skills</a></li>
