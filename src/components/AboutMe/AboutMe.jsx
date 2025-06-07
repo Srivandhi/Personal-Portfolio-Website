@@ -4,7 +4,7 @@ const AboutMe = () => {
         <div className="aboutme">
             <h1>About Me</h1>
             <p>
-                Hi! I'm Srivandhi, an aspiring Software Engineer passionate about <span>UI/UX design</span> and <span>Full Stack Development</span>,
+                Hi! I'm Srivandhi, an aspiring Software Engineer passionate about <span>AI</span> and <span>Full Stack Development</span>,
                 especially the MERN stack (MongoDB, Express.js, React.js, and Node.js).
                 I enjoy solving problems and have tackled 200+ coding challenges on LeetCode and GeeksforGeeks.
                 Currently, I’m building projects to apply my skills and create seamless, user-friendly applications.

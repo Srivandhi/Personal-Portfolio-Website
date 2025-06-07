@@ -104,17 +104,6 @@ const Skills = () => {
                         <div className="skill-per" per="70%" style={{ maxWidth: '70%' }}></div>
                     </div>
                 </div>
-
-                <div className="skill">
-                    <div style={{ display: 'flex' }}>
-                        <img src={`${process.env.PUBLIC_URL}/assets/fig.png`} style={{ width: '25px', height: '47px' }} alt="Figma" />
-                        <div className="skill-name">Figma</div>
-                    </div>
-                    <div className="skill-bar">
-                        <div className="skill-per" per="20%" style={{ maxWidth: '20%' }}></div>
-                    </div>
-                </div>
-
             </div>
         </div>
     );
