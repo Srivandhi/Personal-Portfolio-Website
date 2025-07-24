@@ -64,6 +64,15 @@ const Skills = () => {
                         <div className="skill-per" per="75%" style={{ maxWidth: '75%' }}></div>
                     </div>
                 </div>
+                <div className="skill">
+                    <div style={{ display: 'flex' }}>
+                        <img src={`${process.env.PUBLIC_URL}/assets/expressjs.png`} style={{ width: '50px',height:'50px' }} alt="Express.js" />
+                        <div className="skill-name">MongoDB</div>
+                    </div>
+                    <div className="skill-bar">
+                        <div className="skill-per" per="90%" style={{ maxWidth: '90%' }}></div>
+                    </div>
+                </div>
 
                 <div className="skill">
                     <div style={{ display: 'flex' }}>
