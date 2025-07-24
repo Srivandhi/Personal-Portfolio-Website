@@ -1,63 +1,92 @@
 .project-body {
     background-color: #111;
-    width: 100vw;
-    height: 100vh;
+    width: 100%; /* Use 100% instead of 100vw to avoid horizontal scrollbars */
+    min-height: 100vh; /* Use min-height for better flexibility on different screen sizes */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; 
-    padding-top: 20px; 
+    justify-content: flex-start;
+    padding: 20px 10px; /* Added horizontal padding */
+    box-sizing: border-box; /* Ensures padding is included in the width/height */
 }
-.project-head{
+
+.project-head {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Align items to the start */
+    margin-bottom: 10px; /* Add some space below the head */
 }
+
 h1 {
     color: white;
     text-align: center;
-    margin:38px 0 10px 0;
+    margin: 38px 0 10px 0;
 }
-.project:hover{
-    transform: scale(1.1);
-}
+
 .projects {
-    display:grid;
-    grid-template-columns: repeat(2,2fr);
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Simplified grid columns */
+    gap: 40px; /* Use 'gap' for consistent spacing between grid items */
     padding: 35px;
-}
-.project-head img{
-    margin-right:10px;
-}
-.project-head a{
-    text-decoration: none;
-    color:black;
+    width: 100%;
+    max-width: 1100px; /* Set a max-width for the container on large screens */
 }
 
 .project {
-    width: 450px;
-    height: 240px;
-    max-height: 300px;
+    width: 100%; /* Let the grid control the width */
+    /* REMOVED: height: 240px; (This was causing the overflow) */
+    /* REMOVED: max-height: 300px; (Also restrictive) */
     background-color: rgb(214, 22, 22);
     border-radius: 20px;
     box-shadow: 3px 3px 10px rgb(37, 32, 32), -3px -3px 10px rgb(56, 50, 50);
-    padding: 15px;
-    margin:20px;
+    padding: 20px;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out; /* ADDED: Smooth transition for the hover effect */
 }
 
-@media (max-width:958px){
-    .projects{
-        grid-template-columns: repeat(1,1fr);
+.project:hover {
+    transform: scale(1.05); /* MODIFIED: Slightly less dramatic hover effect */
+}
+
+.project-head img {
+    margin-right: 15px;
+    height: 30px; /* Give the logo a consistent height */
+    width: 30px;
+}
+
+.project-head a {
+    text-decoration: none;
+    color: white; /* CHANGED: White has better contrast on a red background */
+}
+
+.project p {
+    color: #f0f0f0; /* A slightly off-white is easier to read */
+    font-size: 15px;
+    line-height: 1.6; /* Improve readability */
+    margin-top: auto; /* Pushes the paragraph down if content is short */
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+@media (max-width: 958px) {
+    .projects {
+        grid-template-columns: repeat(1, 1fr); /* Single column for tablets and below */
     }
-    .project{
-        width: 90%;
+    .project {
+        /* No need to set width: 90% anymore as the grid handles it */
+        max-width: 500px; /* Control max width in single column view */
+        margin: 0 auto; /* Center the card */
     }
 }
-@media(max-width:600px){
-    h1{
+
+@media (max-width: 600px) {
+    h1 {
         font-size: 28px;
+    }
+    .projects {
+        padding: 15px; /* Reduce padding on small screens */
+        gap: 25px;
     }
 }
