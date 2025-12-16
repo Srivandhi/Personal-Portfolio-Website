@@ -1,6 +1,38 @@
 import './Skills.css';
+import { useEffect } from 'react';
 
 const Skills = () => {
+    useEffect(() => {
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px'
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-per');
+                    skillBars.forEach(bar => {
+                        bar.classList.add('animate');
+                    });
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        const skillsSection = document.querySelector('.skills');
+
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        return () => {
+            if (skillsSection) {
+                observer.unobserve(skillsSection);
+            }
+        };
+    }, []);
+
     return (
         <div className='body'>
             <h1>Skills</h1>
@@ -57,7 +89,7 @@ const Skills = () => {
 
                 <div className="skill">
                     <div style={{ display: 'flex' }}>
-                        <img src={`${process.env.PUBLIC_URL}/assets/expressjs.png`} style={{ width: '50px',height:'50px' }} alt="Express.js" />
+                        <img src={`${process.env.PUBLIC_URL}/assets/expressjs.png`} style={{ width: '50px', height: '50px' }} alt="Express.js" />
                         <div className="skill-name">Express</div>
                     </div>
                     <div className="skill-bar">
@@ -66,7 +98,7 @@ const Skills = () => {
                 </div>
                 <div className="skill">
                     <div style={{ display: 'flex' }}>
-                        <img src={`${process.env.PUBLIC_URL}/assets/expressjs.png`} style={{ width: '50px',height:'50px' }} alt="Express.js" />
+                        <img src={`${process.env.PUBLIC_URL}/assets/expressjs.png`} style={{ width: '50px', height: '50px' }} alt="Express.js" />
                         <div className="skill-name">MongoDB</div>
                     </div>
                     <div className="skill-bar">
@@ -106,7 +138,7 @@ const Skills = () => {
 
                 <div className="skill">
                     <div style={{ display: 'flex' }}>
-                        <img src={`${process.env.PUBLIC_URL}/assets/git.png`} style={{ width: '38px',height:'50px' }} alt="Git/GitHub" />
+                        <img src={`${process.env.PUBLIC_URL}/assets/git.png`} style={{ width: '38px', height: '50px' }} alt="Git/GitHub" />
                         <div className="skill-name">Git/GitHub</div>
                     </div>
                     <div className="skill-bar">

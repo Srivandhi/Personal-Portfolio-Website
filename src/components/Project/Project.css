@@ -1,92 +1,170 @@
 .project-body {
-    background-color: #111;
-    width: 100%; /* Use 100% instead of 100vw to avoid horizontal scrollbars */
-    min-height: 100vh; /* Use min-height for better flexibility on different screen sizes */
+    background-image: url('/public/assets/backgroundImage.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 20px 10px; /* Added horizontal padding */
-    box-sizing: border-box; /* Ensures padding is included in the width/height */
+    padding: var(--spacing-xl) var(--spacing-lg);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.85) 100%);
+    z-index: 1;
+}
+
+.project-body h1 {
+    color: white;
+    text-align: center;
+    margin: var(--spacing-xl) 0 var(--spacing-lg) 0;
+    font-size: 3rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    z-index: 2;
+}
+
+.project {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-lg);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-base);
+}
+
+.project:hover::before {
+    transform: scaleX(1);
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-color);
 }
 
 .project-head {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align items to the start */
-    margin-bottom: 10px; /* Add some space below the head */
-}
-
-h1 {
-    color: white;
-    text-align: center;
-    margin: 38px 0 10px 0;
-}
-
-.projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Simplified grid columns */
-    gap: 40px; /* Use 'gap' for consistent spacing between grid items */
-    padding: 35px;
-    width: 100%;
-    max-width: 1100px; /* Set a max-width for the container on large screens */
-}
-
-.project {
-    width: 100%; /* Let the grid control the width */
-    /* REMOVED: height: 240px; (This was causing the overflow) */
-    /* REMOVED: max-height: 300px; (Also restrictive) */
-    background-color: rgb(214, 22, 22);
-    border-radius: 20px;
-    box-shadow: 3px 3px 10px rgb(37, 32, 32), -3px -3px 10px rgb(56, 50, 50);
-    padding: 20px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease-in-out; /* ADDED: Smooth transition for the hover effect */
-}
-
-.project:hover {
-    transform: scale(1.05); /* MODIFIED: Slightly less dramatic hover effect */
+    justify-content: flex-start;
+    margin-bottom: var(--spacing-md);
 }
 
 .project-head img {
-    margin-right: 15px;
-    height: 30px; /* Give the logo a consistent height */
-    width: 30px;
+    margin-right: var(--spacing-md);
+    height: 40px;
+    width: 40px;
+    transition: transform var(--transition-base);
+}
+
+.project:hover .project-head img {
+    transform: rotate(360deg);
 }
 
 .project-head a {
     text-decoration: none;
-    color: white; /* CHANGED: White has better contrast on a red background */
+    color: white;
+    transition: color var(--transition-fast);
+}
+
+.project-head a:hover {
+    color: var(--primary-light);
+}
+
+.project-head h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
 }
 
 .project p {
-    color: #f0f0f0; /* A slightly off-white is easier to read */
-    font-size: 15px;
-    line-height: 1.6; /* Improve readability */
-    margin-top: auto; /* Pushes the paragraph down if content is short */
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-top: auto;
 }
-
-/* --- Media Queries for Responsiveness --- */
 
 @media (max-width: 958px) {
     .projects {
-        grid-template-columns: repeat(1, 1fr); /* Single column for tablets and below */
+        grid-template-columns: 1fr;
     }
+
     .project {
-        /* No need to set width: 90% anymore as the grid handles it */
-        max-width: 500px; /* Control max width in single column view */
-        margin: 0 auto; /* Center the card */
+        max-width: 600px;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 600px) {
-    h1 {
-        font-size: 28px;
+    .project-body {
+        padding: var(--spacing-lg) var(--spacing-md);
     }
+
+    .project-body h1 {
+        font-size: 2.5rem;
+    }
+
     .projects {
-        padding: 15px; /* Reduce padding on small screens */
-        gap: 25px;
+        padding: var(--spacing-md);
+        gap: var(--spacing-lg);
+    }
+
+    .project {
+        padding: var(--spacing-md);
+    }
+
+    .project-head h3 {
+        font-size: 1.125rem;
+    }
+
+    .project p {
+        font-size: 0.875rem;
     }
 }
